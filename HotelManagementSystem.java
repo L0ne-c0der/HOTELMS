@@ -34,6 +34,7 @@ class Hotel {
         } else {
             System.out.println("Room " + roomNumber + " does not exist.");
         }
+        sc.close();
     }
     // Check-out a guest from a room
     public void checkOut() {
@@ -54,6 +55,7 @@ class Hotel {
         } else {
             System.out.println("Room " + roomNumber + " does not exist.");
         }
+        sc.close();
     }
     // Find a room by its number
     private Room findRoom(int roomNumber) {
@@ -99,6 +101,7 @@ class Room {
 public class HotelManagementSystem {
     public static void main(String[] args) {
         // Create an array of rooms
+        Scanner sc = new Scanner(System.in);
         Room[] rooms = {
             new Room(101),
             new Room(102),
@@ -108,9 +111,7 @@ public class HotelManagementSystem {
             new Room(203),
         };
         // Create a hotel object
-        Hotel hotel = new Hotel("Grand Hotel", rooms);
-        Scanner sc = new Scanner(System.in);
-        // Display menu and handle user input
+        Hotel hotel = new Hotel("Grand Hotel", rooms);        // Display menu and handle user input
         while (true) {
             System.out.println("\n--- Hotel Management System by DataFlair ---");
             System.out.println("1. Check-in");
